@@ -13,3 +13,4 @@ class TodoItemSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['author'] = self.context['request'].user
         return TodoItem.objects.create(**validated_data) 
+    
